@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Config-Server/src/main/resources/myconfig/memberService.properties&apos; to &apos;member-service.properties&apos;" description="Rename resource &apos;memberService.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/myconfig/memberService.properties" name="member-service.properties" stamp="1669716416861" updateReferences="true"/>
+</session>
