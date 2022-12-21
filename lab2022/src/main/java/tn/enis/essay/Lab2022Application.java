@@ -7,17 +7,23 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
+import tn.enis.essay.Bean.PublicationBean;
 import tn.enis.essay.entity.Etudiant;
 import tn.enis.essay.entity.Member;
+import tn.enis.essay.proxy.PublicationServiceProxy;
 import tn.enis.essay.repository.MemberRepository;
 import tn.enis.essay.service.IMemberService;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableFeignClients
 public class Lab2022Application implements CommandLineRunner {
 	@Autowired
 	IMemberService MemberImpl;
+	//@Autowired
+	//PublicationServiceProxy publicationServiceProxy;
 	public static void main(String[] args) {
 		SpringApplication.run(Lab2022Application.class, args);
 	}
@@ -36,6 +42,8 @@ public class Lab2022Application implements CommandLineRunner {
 		);*/
 		//MemberImpl.addMember(e3);
 		//MemberImpl.deleteMember(5L);
+		/*PublicationBean publication= publicationServiceProxy.findpubById(1L);
+		System.out.println(publication.getTitre());*/
 		
 	}
 

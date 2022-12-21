@@ -47,6 +47,15 @@ public class IMemberController {
 	{
 	return memberService.addMember(e);
 	}
+	@GetMapping("/fullmember/{id}")
+	public Member findAFullMember(@PathVariable(name="id") Long id)
+	{
+
+	Member mbr=memberService.findMember(id);
+	mbr.setPubs(memberService.findPublicationparauteur(id));
+
+	return mbr;
+	}
 	
 	
 	

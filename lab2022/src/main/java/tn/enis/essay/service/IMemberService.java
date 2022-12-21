@@ -2,6 +2,7 @@ package tn.enis.essay.service;
 
 import java.util.List;
 
+import tn.enis.essay.Bean.PublicationBean;
 import tn.enis.essay.entity.EnseignantChercheur;
 import tn.enis.essay.entity.Etudiant;
 import tn.enis.essay.entity.Member;
@@ -24,4 +25,6 @@ public interface IMemberService {
 	public List<EnseignantChercheur> findByEtablissement(String
 	etablissement);
 	//other ...
+	public void affecterauteurTopublication(Long idauteur, Long idpub);
+	public List<PublicationBean> findPublicationparauteur (Long idauteur);
 }

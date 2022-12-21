@@ -1,6 +1,7 @@
 package tn.enis.essay.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.DiscriminatorColumn;
@@ -13,12 +14,14 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import tn.enis.essay.Bean.PublicationBean;
 
 @Entity @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name= "type_mbr", discriminatorType =
@@ -38,6 +41,8 @@ public abstract class Member implements Serializable{
 	private String cv;
 	private String email;
 	private String password;
+	@Transient
+	Collection<PublicationBean> pubs;
 	public Member(String cin, String nom, String prenom, Date date, byte photo, String cv, String email,
 			String password) {
 		super();
